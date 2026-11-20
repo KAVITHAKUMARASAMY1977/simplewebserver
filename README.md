@@ -1,5 +1,5 @@
 # EX01 Developing a Simple Webserver
-## Date:28.09.2026
+## Date:
 
 ## AIM:
 To develop a simple webserver to serve html pages and display the Windows Specifications of your Laptop.
@@ -36,83 +36,9 @@ Start the server script and check for errors.
 Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
-web.py
-
-```
-from http.server import HTTPServer, BaseHTTPRequestHandler
-content = """
-<html>
-    <head>
-
-    </head>
-    <body>
-        
-        <table>
-            <caption>my device pc</caption>
-            <tr>
-                <td>1</td>
-                <td>Device name</td>
-                <td>PUNITHA</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Processor</td>
-                <td>12th Gen Intel(R) Core(TM) i3-1215U (1.20 GHz)</td>
-            </tr><tr>
-                <td>3</td>
-                <td>Installed RAM</td>
-                <td>8.00 GB (7.69 GB usable)</td>
-            </tr><tr>
-                <td>4</td>
-                <td>Graphics card</td>
-                <td>intel(R) UHD Graphics (128 MB)</td>
-            </tr><tr>
-                <td>5</td>
-                <td>Storage</td>
-                <td>164 GB of 477 GB used</td>
-            </tr><tr>
-                <td>6</td>
-                <td>Device ID</td>
-                <td>423246DF-9825-457E-916D-4C46BB19C5DC</td>
-            </tr><tr>
-                <td>7</td>
-                <td>Product ID</td>
-                <td>00356-24617-94682-AAOEM</td>
-            </tr><tr>
-                <td>8</td>
-                <td>System type</td>
-                <td>64-bit operating system, x64-based processor</td>
-            </tr><tr>
-                <td>9</td>
-                <td>Pen and touch</td>
-                <td>No pen or touch input is available for this display</td>
-            </tr>
-           </table>
-    </body>
-</html>
-"""
-class myhandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        print("Client request received")
-        self.send_response(200)
-        self.send_header('content-type', 'text/html; charset=utf-8')
-        self.end_headers()
-        self.wfile.write(content.encode())
-server_address = ('',8000)
-httpd = HTTPServer(server_address,myhandler)
-print("my own webserver is running successfully...")
-httpd.serve_forever()
-```
 
 ## OUTPUT:
 
-webpage
-<img width="945" height="682" alt="Screenshot 2026-11-20 183021" src="https://github.com/user-attachments/assets/5b41f89a-f91c-4d54-a81c-6a5df060d44b" />
-
-
-serverpage
-
-<img width="1460" height="261" alt="Screenshot 2026-11-20 195615" src="https://github.com/user-attachments/assets/67618b8c-6b17-402b-857c-708cee0914dd" />
 
 
 ## RESULT:
